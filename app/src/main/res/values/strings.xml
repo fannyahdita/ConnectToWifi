@@ -5,7 +5,7 @@
     <string name="enabling">Enabling wifi</string>
     <string name="connecting">Trying to connect</string>
     <string name="disconnecting">Trying to disconnect</string>
-    <string name="connected">Connected</string>
+    <string name="connected">Connected to %s</string>
     <string name="disconnected">Disonnected</string>
     
     //toast

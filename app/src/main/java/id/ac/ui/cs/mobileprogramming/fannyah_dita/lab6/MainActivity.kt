@@ -31,9 +31,7 @@ class MainActivity : AppCompatActivity() {
 
             titleText.text = getString(R.string.connecting)
 
-            connectToNetworkWep("ssid", "password") //wifi apa ni yang kamu mau
-
-            titleText.text = getString(R.string.connected)
+            connectToNetworkWep("string", "password") //wifi apa ni yang kamu mau
         }
 
         disconnect.setOnClickListener {
@@ -54,11 +52,11 @@ class MainActivity : AppCompatActivity() {
                 val wifiInfo = wifiManager.connectionInfo
                 Toast.makeText(
                     applicationContext,
-                    "Broadcast Connected:" + wifiInfo.ssid,
+                    getString(R.string.bc_connected, wifiInfo.ssid),
                     Toast.LENGTH_LONG
                 ).show()
             } else {
-                Toast.makeText(applicationContext, "Broadcast Not Connected", Toast.LENGTH_LONG)
+                Toast.makeText(applicationContext, getString(R.string.bc_not_connected), Toast.LENGTH_LONG)
                     .show()
             }
         }
@@ -66,6 +64,8 @@ class MainActivity : AppCompatActivity() {
 
     private fun connectToNetworkWep(ssid: String, password: String): Boolean {
         try {
+
+            titleText.text = String.format(getString(R.string.connected, ssid))
             val conf = WifiConfiguration()
             conf.SSID =
                 "\"" + ssid + "\""
