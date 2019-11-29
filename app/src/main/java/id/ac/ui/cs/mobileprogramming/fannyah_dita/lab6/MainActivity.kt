@@ -64,11 +64,11 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    fun connectToNetworkWep(ssid: String, password: String): Boolean {
+    private fun connectToNetworkWep(ssid: String, password: String): Boolean {
         try {
             val conf = WifiConfiguration()
             conf.SSID =
-                "\"" + ssid + "\""   // Please note the quotes. String should contain SSID in quotes
+                "\"" + ssid + "\""
 
             conf.preSharedKey = "\"" + password + "\""
 
@@ -78,7 +78,7 @@ class MainActivity : AppCompatActivity() {
             conf.allowedKeyManagement.set(WifiConfiguration.KeyMgmt.WPA_PSK)
             conf.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.TKIP)
             conf.allowedPairwiseCiphers.set(WifiConfiguration.PairwiseCipher.CCMP)
-            
+
             val wifiManager =
                 this.applicationContext.getSystemService(Context.WIFI_SERVICE) as WifiManager
             wifiManager.addNetwork(conf)
@@ -96,7 +96,5 @@ class MainActivity : AppCompatActivity() {
         } catch (ex: Exception) {
             return false
         }
-
-
     }
 }
