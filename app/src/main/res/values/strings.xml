@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Lab6</string>
+
+    //title text
+    <string name="enabling">Enabling wifi</string>
+    <string name="connecting">Trying to connect</string>
+    <string name="disconnecting">Trying to disconnect</string>
+    <string name="connected">Connected</string>
+    <string name="disconnected">Disonnected</string>
+    
+    //toast
+    <string name="bc_connected">Broadcast connected tp %s</string>
+    <string name="bc_not_connected">Broadcast not connected</string>
+</resources>
